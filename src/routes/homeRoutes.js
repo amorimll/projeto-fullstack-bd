@@ -1,5 +1,4 @@
 const express = require('express')
-const { eAdmin } = require('../../middleware/auth')
 const userControllers = require('../controllers/userControllers')
 const router = express.Router()
 

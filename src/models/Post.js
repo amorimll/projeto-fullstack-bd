@@ -1,6 +1,6 @@
 const db = require("../../config/db")
 
-class User {
+class Post {
     constructor (titulo, texto, userid, username) {
         this.titulo = titulo
         this.texto = texto
@@ -23,10 +23,10 @@ class User {
             '${this.username}'
         )
         `
-        const newUser = db.execute(sql)
+        const newPost = db.execute(sql)
 
-        return newUser
+        return newPost
     }
 }
 
-module.exports = User
+module.exports = Post

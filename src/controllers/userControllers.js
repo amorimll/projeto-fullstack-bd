@@ -47,6 +47,11 @@ exports.createNewPost = async (req, res) => {
     res.send("Create post route")
 }
 
+exports.getUsername = async (req, res) => {
+    const user = await db.execute(`SELECT username FROM users WHERE users.id = ${req.userId}`)
+    res.json(user[0][0])
+}
+
 exports.loginUser = async (req, res) => {
     const { email, senha } = req.body
 

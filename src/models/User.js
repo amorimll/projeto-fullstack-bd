@@ -7,7 +7,7 @@ class User {
         this.email = email
     }
 
-    save () { 
+    save() { 
         let sql = `
         INSERT INTO users(
             username,
@@ -25,7 +25,22 @@ class User {
         return newUser
     }
 
-    static findAll() {}
+    createTable() {
+        let sql = `
+        CREATE TABLE users (
+            id INT NOT NULL AUTO_INCREMENT,
+            username VARCHAR(50) NOT NULL,
+            password VARCHAR(16) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            PRIMARY KEY (id),
+            UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+            UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE);
+        `
+
+        const newUserTable = db.execute(sql)
+
+        return newUserTable
+    }
 }
 
 module.exports = User

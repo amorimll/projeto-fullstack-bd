@@ -62,7 +62,7 @@ exports.createNewUser = async (req, res) => {
         } else {
             await createUser.save()
         }
-        res.status(200).send('Funcionou')
+        res.send({status: 200})
     } catch (error) {
         res.send({ status: error.sqlState })
     }

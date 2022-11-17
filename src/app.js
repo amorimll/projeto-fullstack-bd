@@ -7,7 +7,7 @@ const { auth } = require('../middleware/auth')
 
 const PORT = process.env.PORT || 3001;
 
-const postRoutes = require("./routes/postRoutes")
+const postRoutes = require("./routes/registerRoutes")
 const loginRoutes = require("./routes/loginRoutes")
 const homeFeed = require("./routes/homeRoutes")
 const userRoutes = require("./routes/userRoutes")
